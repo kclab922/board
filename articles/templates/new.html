@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <form action="{% url 'articles:create' %}" class="mt-4" method="POST">
+        <!-- 이 빈 도화지에 우리꺼라는 도장 찍는 것. post를 위해 빈 종이에 인증해두는 것. -->
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" name="title">
+        </div>
+        <div class="mb-3">
+            <label for="content" class="form-label">Content</label>
+            <textarea name="content" id="content" cols="30" rows="10" class="form-control"></textarea>
+        </div>
+
+        <input type="submit" class="btn btn-primary">
+    </form>
+{% endblock %}
