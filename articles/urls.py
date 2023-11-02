@@ -5,6 +5,7 @@ from . import views
 app_name = 'articles'
 
 urlpatterns = [
+    # '': articles/ 에 해당하는 정보만 받겠다
     path('', views.index, name='index'),
 ]
  
