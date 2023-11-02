@@ -12,3 +12,14 @@ def index(request):
         'articles': articles
     }
     return render(request, 'index.html', context)
+
+
+def detail(request, id):
+    # 단일게시물이므로 article 단수형
+    article = Article.objects.get(id=id)
+
+    context = {
+        'article': article,
+    }
+    
+    return render(request, 'detail.html', context)
