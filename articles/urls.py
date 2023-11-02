@@ -12,5 +12,6 @@ urlpatterns = [
     # input 넣을 수 있는 빈 도화지 페이지 만들기
     path('new/', views.new, name='new'),
     path('create/', views.create, name='create'),
+    path('<int:id>/delete/', views.delete, name='delete'),
 ]
  

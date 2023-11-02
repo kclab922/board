@@ -35,7 +35,7 @@ def create(request):
 
     article = Article()
     article.title = title
-    article.contetn = content
+    article.content = content
     article.save()
 
     # 제출 후 인덱스로
@@ -43,3 +43,10 @@ def create(request):
 
     # 제출 후 디테일로
     return redirect('articles:detail', id=article.id)
+
+
+def delete(request, id):
+    article = Article.objects.get(id=id)
+    article.delete()
+
+    return redirect('articles:index')
