@@ -52,10 +52,14 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'board.urls'
 
+# html 관련 설정들을 다루는 옵션
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        # 기본적으로 앱 안에 있는 템플릿을 제외하고, 그외 추가적으로 html을 탐지하려는 폴더
+        # BASE DIRECTORY: 프로젝트 최상단 폴더
+        'DIRS': [BASE_DIR / 'templates'],
+        # 템플릿을 찾는 위치: 앱 폴더 내의 templates 폴더 
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
